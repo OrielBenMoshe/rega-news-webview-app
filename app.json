@@ -1,36 +1,62 @@
 {
   "expo": {
-    "name": "rega-news",
+    "name": "רגע חדשות",
     "slug": "rega-news",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/adaptive-icon.png",
+    "androidStatusBar": {
+      "barStyle": "light-content"
+    },
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rega.news"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#031048"
+      },
+      "package": "il.co.reganews",
+      "versionCode": 5
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development",
+          "smallIcons": [
+            "./assets/ic_stat_onesignal_default.png"
+          ],
+          "smallIconAccentColor": "#00F0FF"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "oneSignalAppId": "5de75774-3388-41d2-beb0-6c12346ad52c",
+      "eas": {
+        "projectId": "6c68327b-c5d6-41b7-b772-f258843925ea"
+      },
+      "router": {
+        "origin": false
+      }
+    },
+    "owner": "oriel.bm",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6c68327b-c5d6-41b7-b772-f258843925ea"
     }
   }
 }

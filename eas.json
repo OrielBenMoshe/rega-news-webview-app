@@ -1,0 +1,56 @@
+{
+  "cli": {
+    "version": ">= 10.1.1"
+  },
+  "build": {
+    "development-simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "credentialsSource": "remote",
+      "ios": {
+        "simulator": true
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "main"
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "credentialsSource": "remote",
+      "channel": "main",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "production": {
+      "credentialsSource": "remote",
+      "channel": "main",
+      "distribution": "store",
+      "android": {
+        "credentialsSource": "local",
+        "buildType": "apk"
+      },
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "internal": {
+      "android": {
+        "serviceAccountKeyPath": "./credentials/android/rega-news-notifications-firebase-adminsdk-2t9m6-46d13748da.json",
+        "track": "internal"
+      }
+    },
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./credentials/android/rega-news-notifications-firebase-adminsdk-2t9m6-46d13748da.json",
+        "track": "production"
+      }
+    }
+  }
+}
+
+
+
