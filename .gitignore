@@ -20,5 +20,6 @@ expo-env.d.ts
 credentials.json
 credentials/
 credentials/android/
+credentials/ios/
 
 # @end expo-cli
