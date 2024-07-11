@@ -17,7 +17,7 @@ import Signal from "../services/Signal";
 
 const { height, width } = Dimensions.get('window');
 const hebrewWebsite = "https://reganews.co.il";
-const englishWebsite = "https://positive-angle.com";
+const englishWebsite = "https://rega.news";
 const script = `
     (function() {
       function addShareButtonListener() {
