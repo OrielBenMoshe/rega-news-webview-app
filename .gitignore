@@ -19,5 +19,6 @@ web-build/
 expo-env.d.ts
 credentials.json
 credentials/
+credentials/android/
 
 # @end expo-cli
