@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import {
+  StyleSheet,
   View,
   Image,
   BackHandler,
   Share,
+  Dimensions,
   ToastAndroid,
   AppState
 } from "react-native";
@@ -13,8 +15,8 @@ import { StatusBar } from 'expo-status-bar';
 import * as Localization from 'expo-localization';
 import * as Linking from 'expo-linking';
 import Signal from "../services/Signal";
-import Styles from "./styles";
 
+const { height, width } = Dimensions.get('window');
 const hebrewWebsite = "https://reganews.co.il/";
 const englishWebsite = "https://rega.news/";
 const script = `
@@ -162,7 +164,7 @@ export default function Index() {
   }, [showWebView, currentUrl]);
 
   return (
-    <View style={Styles.container}>
+    <View style={stylesLOPLLO.container}>
       <StatusBar style="light" />
       {showWebView && (
         <WebView
@@ -189,8 +191,8 @@ export default function Index() {
           setSupportMultipleWindows={false}
           style={{ width: "100%", height: "100%" }}
           renderLoading={() => (
-            <View style={Styles.bg}>
-              <Image style={Styles.gif} source={require("../assets/splash.gif")} />
+            <View style={stylesLOPLLO.bg}>
+              <Image style={stylesLOPLLO.gif} source={require("../assets/splash.gif")} />
             </View>
           )}
           onShouldStartLoadWithRequest={({ url }) => {
@@ -206,3 +208,25 @@ export default function Index() {
     </View>
   );
 }
+
+const stylesLOPLLO = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#031048",
+  },
+  bg: {
+    width,
+    height,
+    backgroundColor: "#031048",
+    margin: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  gif: {
+    width,
+    height,
+    margin: "auto",
+    resizeMode: 'contain'
+  },
+});

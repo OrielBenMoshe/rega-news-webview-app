@@ -12,15 +12,33 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rega.news"
+      "bundleIdentifier": "com.rega.news",
+      "buildNumber": "1.0.0",
+      "icon": "./assets/ios.png",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "fetch",
+          "remote-notification"
+        ],
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": [
+          "en",
+          "he"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#031048"
       },
+      "userInterfaceStyle": "dark",
+      "backgroundColor": "#031048",
       "package": "il.co.reganews",
-      "versionCode": 5
+      "versionCode": 8
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +53,7 @@
           "smallIcons": [
             "./assets/ic_stat_onesignal_default.png"
           ],
-          "smallIconAccentColor": "#00F0FF"
+          "smallIconAccentColor": "#031048"
         }
       ]
     ],

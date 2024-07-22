@@ -26,14 +26,14 @@
       }
     },
     "production": {
-      "credentialsSource": "remote",
+      "credentialsSource": "local",
       "channel": "main",
       "distribution": "store",
+      "autoIncrement": true,
       "android": {
         "credentialsSource": "local",
         "buildType": "apk"
-      },
-      "autoIncrement": true
+      }
     }
   },
   "submit": {
@@ -51,6 +51,3 @@
     }
   }
 }
-
-
-

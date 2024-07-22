@@ -2,27 +2,26 @@ import { OneSignal, LogLevel } from "react-native-onesignal";
 import Constants from "expo-constants";
 import * as Localization from "expo-localization";
 
-// הגדרת רמת הלוגים של OneSignal
 OneSignal.Debug.setLogLevel(6);
-
-// אתחול OneSignal עם מזהה האפליקציה
 OneSignal.initialize(Constants.expoConfig.extra.oneSignalAppId);
 
-// הגדרת שפת המכשיר והוספת תגית
 let deviceLanguage = Localization.getLocales()[0].languageCode;
 if (deviceLanguage === "iw") deviceLanguage = "he";
+
+// console.log("Device language:", deviceLanguage);
+
 OneSignal.User.addTag("language", deviceLanguage);
 
 const Close = () => {
   OneSignal.Notifications.removeEventListener("click");
 };
 
-// פונקציה לרישום מאזינים לאירועים של OneSignal
+// Function to register OneSignal event listeners
 const Register = (callback) => {
-  // בקשת הרשאות להתראות
+  // Request permission to receive push notifications
   OneSignal.Notifications.requestPermission(true);
 
-  // מאזין לאירועי לחיצה על הודעות
+  // Add event listener for notification click events
   OneSignal.Notifications.addEventListener("click", (event) => {
     const data = event.notification.additionalData;
     callback(data);
